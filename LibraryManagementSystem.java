@@ -126,7 +126,7 @@ public final class LibraryManagementSystem extends JFrame {
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, book.getBookId());
             ps.setString(2, book.getTitle());
-            ps.setString(3, authorField.getText().trim());
+            ps.setString(3, book.getAuthor());
             ps.setString(4, book.getPublisher());
             ps.setInt(5, book.getQuantity());
             ps.executeUpdate();
@@ -152,7 +152,7 @@ public final class LibraryManagementSystem extends JFrame {
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, book.getTitle());
-            ps.setString(2, authorField.getText().trim());
+            ps.setString(2, book.getAuthor());
             ps.setString(3, book.getPublisher());
             ps.setInt(4, book.getQuantity());
             ps.setInt(5, book.getBookId());
@@ -190,7 +190,7 @@ public final class LibraryManagementSystem extends JFrame {
                 JOptionPane.showMessageDialog(this, "Book ID must be positive and quantity cannot be negative.");
                 return null;
             }
-            return new Book(id, title, publisher, quantity);
+            return new Book(id, title, author, publisher, quantity);
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Enter a valid Book ID and quantity.");
             return null;
