@@ -1,0 +1,16 @@
+# Java compiled files
+*.class
+
+# MySQL connector library
+lib/
+
+# VS Code workspace settings
+.vscode/
+
+# Local configuration and secrets
+.env
+config.properties
+
+# Operating system files
+.DS_Store
+Thumbs.db
